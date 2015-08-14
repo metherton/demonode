@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class='container-fluid')
+    h1= title
+    form
+      div(class='form-group')
+        label(for="phone") Phone Number
+        input(type="text", id="phone", placeholder="Enter phone number here" class="form-control")
+      div(class='form-group')
+        label(for="message") Message
+        textarea(id="message" class="form-control")
+      button(id="btnSendSms" class="btn" class="btn-default") Send SMS
