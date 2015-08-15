@@ -20,8 +20,6 @@ router.get('/sendsms', function(req, res, next) {
 });
 
 router.post('/sendsms', function(req, res, next) {
-  console.log('mess', req.param('message'));
-
   client.sendSms({
     to: req.param('phone'),
     from: TWILIO_NUMBER,
@@ -29,15 +27,6 @@ router.post('/sendsms', function(req, res, next) {
   }, function(err, data) {
     res.send('Message sendsms1 is really inbound yo !');
   });
-  //client.sendSms({
-  //  to: req.param('phone'),
-  //  from: TWILIO_NUMBER,
-  //  body: req.param('message')
-  //}, function(err, data) {
-  //  // When we get a response from Twilio, respond to the HTTP POST request
-  //  res.send('Message is inbound!');
-  //});
-  //res.send('number sent');
 });
 
 module.exports = router;
