@@ -2,7 +2,7 @@ var request = require('supertest');
 var app = require('../app');
 
 describe('/sendsms', function() {
-    
+
     it('GET should respond with 200', function(done){
         request(app)
             .get('/sendsms')

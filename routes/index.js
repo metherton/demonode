@@ -15,11 +15,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/sendsms', function(req, res, next) {
+router.get('/sms', function(req, res, next) {
   res.render('sendsms', { title: 'Send SMS' });
 });
 
-router.post('/sendsms', function(req, res, next) {
+router.post('/sms', function(req, res, next) {
   client.sendSms({
     to: req.param('phone'),
     from: TWILIO_NUMBER,

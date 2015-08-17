@@ -3,7 +3,7 @@ $(document).ready(function(){
         e.preventDefault();
         // Based on the selected demo, fire off an ajax request
         // We expect just a string of text back from the server (keeping it simple)
-        $.ajax('/sendsms', {
+        $.ajax('/sms', {
             method:'POST',
             dataType:'text',
             data:{
