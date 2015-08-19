@@ -20,12 +20,6 @@ router.get('/sms', function(req, res, next) {
 });
 
 router.post('/sms', function(req, res, next) {
-
-  //res.header("Access-Control-Allow-Origin", "*");
-  //res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTIONS');
-  //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
-
   client.sendSms({
     to: req.param('phone'),
     from: TWILIO_NUMBER,
