@@ -19,6 +19,13 @@ router.get('/sms', function(req, res, next) {
   res.render('sendsms', { title: 'Send SMS' });
 });
 
+router.get('/autoresponder', function(req, res, next) {
+  var twiml = new twilio.TwimlResponse();
+  twiml.message('auto respond message');
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
+
 router.post('/sms', function(req, res, next) {
   client.sendSms({
     to: req.param('phone'),
